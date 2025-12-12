@@ -11,8 +11,7 @@ __pycache__
 *.install
 *.log
 
-# Ignorar archivos de datos
-/data/
+
 
 # Ignorar configuraciones de editor (por ejemplo, VSCode, vim, etc.)
 .vscode/
