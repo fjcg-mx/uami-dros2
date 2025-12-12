@@ -1,0 +1,6 @@
+geometry_msgs/PoseStamped target_pose
+---
+bool accepted
+---
+geometry_msgs/PoseStamped current_pose
+float64 progress

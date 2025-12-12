@@ -1,0 +1,17 @@
+dependencies:
+  # Paquetes de ROS 2
+  rosdep:
+    - ros-humble-rclcpp
+    - ros-humble-std-msgs
+
+  # Dependencias del sistema
+  system:
+    - opencv
+    - libopencv-dev
+    - libboost-all-dev
+    - python3-pip
+
+  # Dependencias de otros paquetes ROS 2
+  packages:
+    - my_drone_control
+    - my_sensor_package

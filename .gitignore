@@ -1,0 +1,23 @@
+# Ignorar archivos de build
+/build/
+/install/
+/log/
+
+# Ignorar archivos temporales de Python (si usas Python)
+*.pyc
+__pycache__
+
+# Ignorar archivos generados por colcon
+*.install
+*.log
+
+# Ignorar archivos de datos
+/data/
+
+# Ignorar configuraciones de editor (por ejemplo, VSCode, vim, etc.)
+.vscode/
+.idea/
+
+# Ignorar archivos de sistema operativo (ej. macOS, Windows)
+.DS_Store
+Thumbs.db

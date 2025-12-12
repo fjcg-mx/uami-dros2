@@ -1,0 +1,28 @@
+# Usar la imagen oficial de ROS 2 Kilted Desktop Full
+ARG ROS_DISTRO_ARG=kilted
+
+FROM osrf/ros:${ROS_DISTRO_ARG}-desktop-full
+
+# Establecer el directorio de trabajo dentro del contenedor
+WORKDIR /workspace
+
+# Instalar dependencias necesarias (si las necesitas, puedes agregar más)
+RUN apt-get update && apt-get install -y \
+    nano \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Inicializar rosdep (manejo de dependencias ROS)
+RUN rosdep init || true
+RUN rosdep update || true
+
+# Crear workspace
+WORKDIR /ros_ws
+
+# Script de inicialización al entrar al contenedor
+COPY entrypoint.sh /ros_ws/entrypoint.sh
+RUN chmod +x /ros_ws/entrypoint.sh
+
+# Ejecutar entrypoint al iniciar el contenedor
+CMD ["/ros_ws/entrypoint.sh"]
